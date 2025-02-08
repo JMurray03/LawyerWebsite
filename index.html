@@ -12,30 +12,141 @@
     <link rel="stylesheet" href="https://use.typekit.net/gll4rxi.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="style.css" rel="stylesheet">
     <title>Murray & Co. Attorneys-at-Law</title>
+    <style>
+        #faq-page {
+            background-image: url(./assets/faq_bg.png);
+            background-size: cover;
+        }
+
+        #faq-page h1 {
+            margin-left: 2em;
+            margin-top: 2em;
+            margin-bottom: 0;
+            font-family: 'Libre Baskerville', sans-serif;
+            font-weight: 400;
+            color: #CDAD7D;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            font-size: 3em;
+
+        }
+
+        #faq-subheading {
+            width: 70%;
+            margin-left: 5.5em;
+            /* margin-top:4em; */
+            font-family: 'Libre Baskerville', sans-serif;
+            font-weight: 400;
+            color: #F4F1EC;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            font-size: 1.1em;
+        }
+
+        .faq-container {
+            /* margin-top:200px; */
+            width: 100%;
+            max-width: 800px;
+            /* margin: 0 auto; */
+            /* margin-top:5em; */
+            margin: 2em auto;
+            /* padding: 20px;  */
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            background-color: #F4F1EC;
+            color: #333;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .faq-question:hover {
+            background-color: #fbead0;
+        }
+
+        .faq-answer {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.7em;
+            ;
+            max-height: 0;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            /* color: */
+            /* padding: 0 15px; */
+            transition: max-height 0.5s ease-out;
+        }
+
+
+        .faq-answer p {
+            padding: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            /* Adjust depending on the content */
+            /* padding: 15px; */
+        }
+
+        .faq-item.active .faq-question {
+            background-color: #fbead0;
+        }
+
+        #shaneis-text {
+            font-family: 'liana', script;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #murray-text {
+            font-family: 'Libre Baskerville', script;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
 </head>
 
 
 <body>
-    <div id="menubar">
+    <div id="menubar" class="hidden">
         <a class="menu-item" href="#second-page">About</a>
         <a class="menu-item" href="#third-page">Services</a>
         <a class="menu-item" id="menu-middle" href="#first-page">
-            MURRAY & CO.
+            <p id="middle-top">MURRAY & CO.</p>
+            <p id="middle-bottom">Attorneys-at-Law</p>
         </a>
-        <a class="menu-item" href="#faq">FAQ</a>
-        <a class="menu-item" href="#feedback-page">Feedback</a>
+        <a class="menu-item" href="#faq-page">FAQ</a>
+        <a class="menu-item" href="#contact-page">Contact Us</a>
+        <div class="menu-spacer"></div>
     </div>
+    <button id="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
     <div id="first-page" class="content-page">
-        <!-- first page contents -->
-
-        <div id="header-div">
-            <h1 id="first-header">
-                Estate Planning and Probate Estate Administration Services in Trinidad & Tobago
-            </h1>
+        <div class="logo-container">
+            <p class="logo-top">MURRAY & CO.</p>
+            <p class="logo-bottom">Attorneys-at-Law</p>
         </div>
+        <h1 id="first-header">
+            Estate Planning and Probate Estate Administration Services in Trinidad & Tobago
+        </h1>
         <div id="first-content" class="content-div">
             At Murray & Co., we understand how difficult losing a loved one can be, and we keep that at the forefront of
             our minds as we guide you through the probate process. Our compassionate attorneys ensure that estate
@@ -56,19 +167,14 @@
             <h1 id="second-header">
                 Hi there, I'm
             </h1>
-            <p id="shaneis-text" style="font-family: 'liana', script;
-            font-weight: 400;
-            font-style: normal;">
+            <h1 id="shaneis-text">
                 Shaneis
-            </p>
-            <p id="murray-text" style="font-family:'Libre Baskerville', script;
-            font-weight:400;
-            font-style:normal;
-            ">
+            </h1>
+            <h1 id="murray-text">
                 MURRAY
-            </p>
+            </h1>
             <p id="txt-content">
-                I am dedicated attorney specializing in estate planning and probate law. With a compassionate
+                I am a dedicated attorney specializing in estate planning and probate law. With a compassionate
                 approach,
                 I will provide clear guidance and effective representation during challenging times. I am committed
                 to
@@ -105,7 +211,7 @@
                 </h1>
                 <p class="text-box-content">
                     Our expertise in Estate Planning can help you create and craft an estate plan that best protects and
-                    serves your family’s specific.
+                    serves your family’s specific needs.
                 </p>
             </div>
             <div class="textbox" id="tbox2" style="background-color: #DBBF94;">
@@ -124,7 +230,7 @@
                 </h1>
                 <p class="text-box-content">
                     We can advise you in relation to disputes that arise during the probate process. These disputes can
-                    involve a variety of issues related including contesting a will, the appointment of the executor or
+                    involve a variety of issues including contesting a will, the appointment of the executor or
                     administrator and the distribution of assets.
                 </p>
             </div>
@@ -158,7 +264,53 @@
         </section>
     </div>
 
-    <div id="feedback-page" class="content-page">
+    <div id="faq-page" class="content-page">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <p id="faq-subheading">
+            We’ve compiled answers to common questions to help guide you through the legal process with clarity and
+            confidence.
+        </p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">How long does the probate process typically take?</button>
+                <div class="faq-answer">
+                    <p>The probate process in Trinidad generally takes between 18 to 24 months. While we work
+                        efficiently to manage your case, the timeline is largely influenced by the legal system and
+                        procedures in place. We’ll ensure everything on our end is handled promptly to help the process
+                        move as smoothly as possible.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do I need a lawyer to go through probate?</button>
+                <div class="faq-answer">
+                    <p>Having a lawyer ensures the process is handled correctly and efficiently, helping to avoid any
+                        legal complications. In Trinidad and Tobago, if the estate is valued at over $4,800.00, the
+                        application for probate must be made through an Attorney-at-Law.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What should I expect during my first consultation?</button>
+                <div class="faq-answer">
+                    <p>During the first consultation, we’ll discuss your legal needs, review your case, and provide
+                        clear guidance on the next steps. Our goal is to ensure you understand your options and feel
+                        confident moving forward.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What is the difference between estate planning and probate?</button>
+                <div class="faq-answer">
+                    <p>Estate planning occurs during a person’s lifetime and involves creating legal documents like
+                        wills and trusts to manage and distribute assets. Probate, on the other hand, is the legal
+                        process that takes place after someone passes away to administer their estate according to their
+                        will or local laws.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div id="feedback-page" class="content-page">
         <h1 id="feedback-header">
             Feedback from our Clients
         </h1>
@@ -166,7 +318,8 @@
         <div id="feedback-box-div">
             <section class="feedback-box">
                 <div class="feedback-content">
-                    Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.
+                    Boost your product and service's credibility by adding testimonials from your clients. People love
+                    recommendations so feedback from others who've tried it is invaluable.
                 </div>
                 <div class="feedback-writer">
                     - Lorna Alvarado
@@ -174,7 +327,8 @@
             </section>
             <section class="feedback-box">
                 <div class="feedback-content">
-                    Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.
+                    Boost your product and service's credibility by adding testimonials from your clients. People love
+                    recommendations so feedback from others who've tried it is invaluable.
                 </div>
                 <div class="feedback-writer">
                     - Teddy Yuhui
@@ -182,14 +336,15 @@
             </section>
             <section class="feedback-box">
                 <div class="feedback-content">
-                    Boost your product and service's credibility by adding testimonials from your clients. People love recommendations so feedback from others who've tried it is invaluable.
+                    Boost your product and service's credibility by adding testimonials from your clients. People love
+                    recommendations so feedback from others who've tried it is invaluable.
                 </div>
                 <div class="feedback-writer">
                     - Hannah Morales
                 </div>
             </section>
         </div>
-    </div>
+    </div> -->
 
     <div id="contact-page" class="content-page">
         <!-- <h1 id="contact-header">
@@ -198,22 +353,24 @@
 
         <footer id="contact-footer">
             <div id="contact-content">
-                <section id="left-section">
-                    <h1 id="footer-logo"> Murray & Co. Attorneys-At-Law </h1>
-                </section>
-                <section id="middle-section">
-                    <h1 id="middle-header">Contact Us</h1>
-                    <p class="m-section-content">
-                        8A Abercromby Street,
-                        Port of Spain, Trinidad, W.I.
-                    </p>
-                    <p class="m-section-content">
-                        (868) 799-0204
-                    </p>
-                    <p class="m-section-content">
-                        info@murraylawcompany.com
-                    </p>
-                </section>
+                <div class="top-sections">
+                    <section id="left-section">
+                        <h1 id="footer-logo"> Murray & Co. <br>Attorneys-at-Law </h1>
+                    </section>
+                    <section id="middle-section">
+                        <h1 id="middle-header">Contact Us</h1>
+                        <p class="m-section-content">
+                            98A Abercromby Street,
+                            Port of Spain, Trinidad, W.I.
+                        </p>
+                        <p class="m-section-content">
+                            (868) 799-0204
+                        </p>
+                        <p class="m-section-content">
+                            info@murraylawcompany.com
+                        </p>
+                    </section>
+                </div>
                 <section id="right-section">
                     <h1 class="r-section-main">Office Hours</h1>
                     <p class="r-section-header">
@@ -244,18 +401,72 @@
         </footer>
     </div>
 
+
     <script>
-        let lastScrollTop = 0;
         const menuBar = document.getElementById("menubar");
-        window.addEventListener("scroll", function () {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            if (currentScroll > lastScrollTop) {
-                menuBar.classList.add("hidden");
-            } else {
-                menuBar.classList.remove("hidden");
+        const menuToggle = document.getElementById("menu-toggle");
+        
+        // Only handle menu interactions on mobile
+        const isMobile = () => window.innerWidth <= 768;
+        
+        // Toggle menu when button is clicked
+        menuToggle.addEventListener("click", function(e) {
+            e.stopPropagation();
+            if (isMobile()) {
+                menuBar.classList.toggle("visible");
+                menuToggle.style.visibility = menuBar.classList.contains("visible") ? "hidden" : "visible";
+                menuToggle.style.opacity = menuBar.classList.contains("visible") ? "0" : "1";
             }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        })
+        });
+
+        // Close menu when clicking outside (mobile only)
+        document.addEventListener("click", function(event) {
+            if (isMobile() && !menuBar.contains(event.target) && !menuToggle.contains(event.target)) {
+                menuBar.classList.remove("visible");
+                menuToggle.style.visibility = "visible";
+                menuToggle.style.opacity = "1";
+            }
+        });
+
+        // Close menu when clicking a menu item (mobile only)
+        const menuItems = document.querySelectorAll(".menu-item");
+        menuItems.forEach(item => {
+            item.addEventListener("click", function() {
+                if (isMobile()) {
+                    menuBar.classList.remove("visible");
+                    menuToggle.style.visibility = "visible";
+                    menuToggle.style.opacity = "1";
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (!isMobile()) {
+                menuBar.classList.remove("visible");
+                menuToggle.style.visibility = "visible";
+                menuToggle.style.opacity = "1";
+            }
+        });
+
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // Toggle active state
+                if (faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                } else {
+                    // Close other open questions
+                    document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+                        activeItem.classList.remove('active');
+                    });
+                    // Open clicked question
+                    faqItem.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 
