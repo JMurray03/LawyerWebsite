@@ -11,7 +11,7 @@ html, body {
     padding: 0;
     margin: 0;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 body {
@@ -348,6 +348,8 @@ h1{
 }
 
 .text-box-header {
+    flex:1;
+    margin-bottom: 2em;
     font-family: 'Libre Baskerville', sans-serif;
     height: 6em;
 }
@@ -526,7 +528,7 @@ h1{
 }
 
 #faq-page {
-    padding: 4rem 2rem 2rem;
+    padding: 4rem 2rem 2rem 2rem;
     background-image: url(./assets/faq_bg.png);
     background-size: cover;
     display: flex;
@@ -554,7 +556,7 @@ h1{
 #faq-subheading {
     width: 70%;
     max-width: 800px;
-    margin: 1rem auto 2rem;
+    margin: 1rem auto auto;
     font-family: 'Libre Baskerville', sans-serif;
     font-weight: 400;
     color: #F4F1EC;
@@ -595,12 +597,12 @@ h1{
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     background: rgba(255, 255, 255, 0.95);
+    font-size:0.85em;
 }
 
 .faq-answer p {
     margin: 0;
     padding: 1rem;
-    font-size: 1em;
 }
 
 .faq-item.active .faq-answer {
@@ -655,9 +657,9 @@ li {
         transform: translateY(0);
     }
 
-    .menu-spacer {
+     .menu-spacer {
         display: block;
-        width: 3.5rem;
+        width: 3.5rem; 
         flex-shrink: 0;
         margin-left: auto;
     }
@@ -830,7 +832,7 @@ li {
     }
 
     #faq-page {
-        padding: 0.5rem;
+        padding: 3rem;
     }
     
     .faq-container {
