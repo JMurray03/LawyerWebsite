@@ -528,7 +528,7 @@ h1{
 }
 
 #faq-page {
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 4rem 1rem 2rem 1rem;
     background-image: url(./assets/faq_bg.png);
     background-size: cover;
     display: flex;
@@ -537,7 +537,7 @@ h1{
 }
 
 .faq-title {
-    margin: 0;
+    margin-right: 2em;
     font-family: 'Libre Baskerville', sans-serif;
     font-weight: 400;
     color: #CDAD7D;
@@ -547,10 +547,10 @@ h1{
     width: 100%;
 }
 
-#faq-page h1 {
+/* #faq-page h1 {
     margin-left:0;
     font-size: 2.6em;
-}
+} */
 
 
 #faq-subheading {
@@ -568,7 +568,7 @@ h1{
 .faq-container {
     width: 100%;
     max-width: 800px;
-    margin: 2em auto;
+    /* margin: 2em auto; */
 }
 
 .faq-item {
@@ -833,6 +833,7 @@ li {
 
     #faq-page {
         padding: 3rem;
+        align-items: center;
     }
     
     .faq-container {
