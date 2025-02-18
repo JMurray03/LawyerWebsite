@@ -915,6 +915,7 @@ li {
 @media screen and (min-width: 769px) {
     .content-page {
         max-width: none;
+        background-position: center;
     }
     
     #first-page {
