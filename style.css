@@ -7,7 +7,8 @@ html {
     max-width: 100vw;
 }
 
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
     width: 100%;
@@ -33,11 +34,8 @@ img {
     margin: 1rem;
 }
 
-p {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-}
 
-h1{
+h1 {
     font-family: 'Libre Baskerville', sans-serif;
     font-weight: 400;
 }
@@ -62,7 +60,7 @@ h1{
     transition: all 0.3s ease;
 }
 
-#menubar.visible ~ #menu-toggle {
+#menubar.visible~#menu-toggle {
     opacity: 0;
     pointer-events: none;
 }
@@ -238,6 +236,9 @@ h1{
 }
 
 #txt-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Inter';
     font-size: clamp(1rem, 1.5vw, 1.1em);
     font-weight: 300;
@@ -348,7 +349,7 @@ h1{
 }
 
 .text-box-header {
-    flex:1;
+    flex: 1;
     margin-bottom: 2em;
     font-family: 'Libre Baskerville', sans-serif;
     height: 6em;
@@ -419,9 +420,7 @@ h1{
     gap: 2rem;
 }
 
-#left-section, #middle-section {
-    flex: 1;
-}
+
 
 #right-section {
     display: flex;
@@ -432,21 +431,25 @@ h1{
 #footer-logo {
     font-family: 'Libre Baskerville', sans-serif;
     font-size: 1.8em;
-    margin: 0;
+    margin-top:0.7em;
     color: black;
+    
 }
+
 /* #footer-bottom p{
     font-family: 'Libre baskerville', sans-serif;
 } */
 
-#middle-header, .r-section-main {
+#middle-header,
+.r-section-main {
     font-family: 'Libre Baskerville', sans-serif;
     font-size: 1.4em;
     margin: 0 0 1rem 0;
     color: black;
 }
 
-.m-section-content, .r-section-content {
+.m-section-content,
+.r-section-content {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     margin: 0.5rem 0;
@@ -472,7 +475,8 @@ h1{
     overflow-x: hidden;
 }
 
-#feedback-header, #feedback-page p {
+#feedback-header,
+#feedback-page p {
     font-family: 'Libre Baskerville', sans-serif;
     font-weight: 400;
     color: #F4F1EC;
@@ -560,7 +564,7 @@ h1{
     margin-right:auto; */
     /* margin: 1rem auto auto;
     margin-left: 1.3em;*/
-    margin-right: 5.5em; 
+    margin-right: 5.5em;
     font-family: 'Libre Baskerville', sans-serif;
     font-weight: 400;
     color: #F4F1EC;
@@ -596,21 +600,85 @@ h1{
     align-items: center;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background: rgba(255, 255, 255, 0.95);
-    font-size:0.85em;
+
+
+#faq-page {
+    background-image: url(./assets/faq_bg.png);
+    background-size: cover;
 }
 
-.faq-answer p {
-    margin: 0;
-    padding: 1rem;
+#faq-page h1 {
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 0;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 400;
+    color: #CDAD7D;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 3em;
+
+}
+
+#faq-subheading {
+    width: 70%;
+    margin-left: 5.5em;
+    /* margin-top:4em; */
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: 400;
+    color: #F4F1EC;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+}
+
+.faq-container {
+    /* margin-top:200px; */
+    width: 100%;
+    max-width: 800px;
+    margin: 2em auto;
+    /* padding: 20px;  */
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #F4F1EC;
+    color: #333;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.faq-question:hover {
+    background-color: #fbead0;
+}
+
+.faq-answer {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+    max-height: 0;
+    background-color: #f9f9f9;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+
 }
 
 .faq-item.active .faq-answer {
     max-height: 500px;
+}
+
+.faq-item.active .faq-question {
+    background-color: #fbead0;
 }
 
 /* List styles */
@@ -661,9 +729,9 @@ li {
         transform: translateY(0);
     }
 
-     .menu-spacer {
+    .menu-spacer {
         display: block;
-        width: 3.5rem; 
+        width: 3.5rem;
         flex-shrink: 0;
         margin-left: auto;
     }
@@ -714,7 +782,8 @@ li {
         margin: 0 auto;
     }
 
-    #txt-section, #img-section {
+    #txt-section,
+    #img-section {
         width: 100%;
         max-width: none;
         margin: 1rem 0;
@@ -744,7 +813,7 @@ li {
         margin: 0;
         padding: 0 1rem;
     }
-    
+
     #fourth-header {
         font-size: 2em;
         text-align: center;
@@ -774,11 +843,11 @@ li {
         bottom: 1rem;
         left: 1rem;
     }
-    
+
     .logo-top {
         font-size: 1em;
     }
-    
+
     .logo-bottom {
         font-size: 0.8em;
     }
@@ -801,7 +870,7 @@ li {
         display: block;
     }
 
-    #menubar.visible ~ #menu-toggle {
+    #menubar.visible~#menu-toggle {
         visibility: hidden;
         opacity: 0;
     }
@@ -839,27 +908,30 @@ li {
         padding: 3rem;
         align-items: center;
     }
-    
+
     .faq-container {
         padding: 0.25rem;
     }
-    
+
     .faq-question {
         font-size: 0.9em;
         padding: 0.7rem;
     }
-    
+
     .faq-answer p {
-        font-size: 0.85em;
-        padding: 0.7rem;
+        font-size: 0.9em;
+        margin: 0;
+        padding: 1rem;
     }
-    .contact-content{
+
+    .contact-content {
         flex-direction: row;
-        max-height:50%;
+        max-height: 50%;
     }
 
     #contact-footer {
-        padding: 1rem;
+        padding: 3rem 1rem 0.5rem 1rem;
+        font-size:0.5em
     }
 
     .top-sections {
@@ -868,25 +940,32 @@ li {
         text-align: center;
     }
 
-    #left-section, #middle-section {
+    #left-section,
+    #middle-section {
         width: 100%;
+        flex:1;
     }
-
+    #left-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     #right-section {
         width: 100%;
         align-items: center;
         text-align: center;
     }
 
-    #footer-logo {
-        font-size: 1.3em;
-    }
+ 
 
-    #middle-header, .r-section-main {
+    #middle-header,
+    .r-section-main {
         font-size: 1.2em;
     }
 
-    .m-section-content, .r-section-content {
+    .m-section-content,
+    .r-section-content {
         font-size: 0.9em;
         margin: 0.3rem 0;
     }
@@ -917,7 +996,7 @@ li {
         max-width: none;
         background-position: center;
     }
-    
+
     #first-page {
         padding: 0 2rem;
     }
