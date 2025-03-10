@@ -117,7 +117,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/front_bg.png');
+    background-image: url('assets/front_bg.webp');
     background-size: cover;
     padding: 2rem;
     text-align: center;
@@ -374,7 +374,7 @@ h1 {
 #contact-page {
     margin-top: 0;
     min-height: 40vh;
-    background-image: url(./assets/contact_bg.png);
+    background-image: url(./assets/contact_bg.webp);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -466,7 +466,7 @@ h1 {
 #feedback-page {
     display: flex;
     align-items: center;
-    background-image: url(./assets/feedback_bg.png);
+    background-image: url(./assets/feedback_bg.webp);
     background-size: cover;
     padding-left: 3em;
     flex-direction: column;
@@ -533,7 +533,7 @@ h1 {
 
 #faq-page {
     padding: 4rem 1rem 2rem 1rem;
-    background-image: url(./assets/faq_bg.png);
+    background-image: url(./assets/faq_bg.webp);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -573,17 +573,12 @@ h1 {
     text-align: center;
 }
 
-.faq-container {
-    width: 100%;
-    max-width: 800px;
-    /* margin: 2em auto; */
-}
-
 .faq-item {
     width: 100%;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     overflow: hidden;
+    /* margin:1em; */
 }
 
 .faq-question {
@@ -603,7 +598,7 @@ h1 {
 
 
 #faq-page {
-    background-image: url(./assets/faq_bg.png);
+    background-image: url(./assets/faq_bg.webp);
     background-size: cover;
 }
 
@@ -631,16 +626,15 @@ h1 {
 }
 
 .faq-container {
-    /* margin-top:200px; */
+    display:flex;
+    flex-direction: column;
     width: 100%;
     max-width: 800px;
     margin: 2em auto;
-    /* padding: 20px;  */
+    gap:8px;
 }
 
-.faq-item {
-    margin-bottom: 10px;
-}
+
 
 .faq-question {
     width: 100%;
@@ -654,7 +648,6 @@ h1 {
     font-weight: bold;
     transition: background-color 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
 }
 
 .faq-question:hover {
@@ -665,16 +658,18 @@ h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 0.9em;
-    max-height: 0;
     background-color: #f9f9f9;
-    transition: max-height 0.5s ease-out;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.95);
-
+    max-height: 0;
+    padding: 0 1rem; /* Keep horizontal padding */
+    opacity: 0;
+    transition: max-height 0.3s ease-out, padding 0.4s ease-out, opacity 0.3s ease-out;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px;
+    max-height: 500px; /* Large enough to fit the content */
+    padding: 1rem; /* Add vertical padding */
+    opacity: 1;
 }
 
 .faq-item.active .faq-question {
@@ -908,10 +903,7 @@ li {
         padding: 3rem;
         align-items: center;
     }
-
-    .faq-container {
-        padding: 0.25rem;
-    }
+ */
 
     .faq-question {
         font-size: 0.9em;
